@@ -10,6 +10,8 @@ from matplotlib import rc
 import numpy as np
 from netCDF4 import Dataset as NetCDFFile
 
+import warnings
+warnings.filterwarnings("ignore")
 
 
 rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
@@ -50,6 +52,8 @@ for it1 in range(3,len(time)+1,4):
         #cs = map.contour(x,y,wave+mean,15,linewidths=1.5)
         cs1 = map.pcolor(x,y,h[it,:,:],cmap='jet')
         cbar=map.colorbar(location='bottom')
+        
+        cbar.ax.set_xticks(cbar.ax.get_xticks())
         cbar.ax.set_xticklabels(cbar.ax.get_xticklabels(), rotation='vertical')
         cbar.set_label('h, m')
         ax1.set_title('Height at t=' + '{0:.2f}'.format(time[it]/(86400)) +' days')
@@ -71,6 +75,7 @@ for it1 in range(3,len(time)+1,4):
         #cs = map.contour(x,y,wave+mean,15,linewidths=1.5)
         cs2 = map.pcolor(x,y,vort[it,:,:],cmap='jet')
         cbar=map.colorbar(location='bottom')
+        cbar.ax.set_xticks(cbar.ax.get_xticks())
         cbar.ax.set_xticklabels(cbar.ax.get_xticklabels(), rotation='vertical')
         cbar.set_label('$\zeta$, s$^{-1}$')
         ax2.set_title('Vorticity')
