@@ -96,7 +96,7 @@ for it1 in range(3,len(time)+1,4):
 
 
 
-        plt.show(block=False)
+        #plt.show(block=False)
         #plt.clim((61000,65000))
         # see matplotlib.org/basemap/users/examples.html
     else:
@@ -110,7 +110,7 @@ for it1 in range(3,len(time)+1,4):
         cs2.set_clim(np.min(vort[it,0:-1,0:-1].flatten()), np.max(vort[it,0:-1,0:-1].flatten()))
         cs3.set_clim(np.min(v[it,0:-1,0:-1].flatten()), np.max(v[it,0:-1,0:-1].flatten()))
 
-        plt.show(block=False)
+        #plt.show(block=False)
 
     if not os.path.exists('/tmp/' + username):
        os.mkdir('/tmp/' + username)
